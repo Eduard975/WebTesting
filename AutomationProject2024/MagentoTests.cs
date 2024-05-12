@@ -26,7 +26,7 @@ namespace AutomationProject2024
         public void Setup()
         {
             ChromeOptions options = new ChromeOptions();
-            driver= new ChromeDriver(options);
+            driver = new ChromeDriver(options);
             driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl("https://magento.softwaretestingboard.com/");
             
@@ -123,6 +123,7 @@ namespace AutomationProject2024
         [TestCleanup]
         public void CloseBrowser()
         {
+            //Thread.Sleep(60000);
             driver.Quit();
         }
     }
