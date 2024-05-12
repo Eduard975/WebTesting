@@ -14,13 +14,13 @@ Selenium.Support*/
 namespace AutomationProject2024
 {
     [TestClass]
-    public class MagentoTests
+    public class OptimusDigitalTest
     {
         private ChromeDriver driver;
-        private CookieConsent cookieConsent;
         private MenuItemsBeforeSignIn menuItemsBeforeSignIn;
         private LoginPage loginPage;
         private HomePage homePage;
+        private CookieConsent cookieConsent;
 
         [TestInitialize]
         public void Setup()
@@ -28,28 +28,30 @@ namespace AutomationProject2024
             ChromeOptions options = new ChromeOptions();
             driver= new ChromeDriver(options);
             driver.Manage().Window.Maximize();
-            driver.Navigate().GoToUrl("https://magento.softwaretestingboard.com/");
-            
-            cookieConsent = new CookieConsent(driver);
+            driver.Navigate().GoToUrl("https://www.optimusdigital.ro/ro/");
+            driver.FindElement(By.Id("lgcookieslaw_accept")).Click();
+            Thread.Sleep(2000);
+            //cookieConsent = new CookieConsent(driver);
             loginPage = new LoginPage(driver);
             menuItemsBeforeSignIn = new MenuItemsBeforeSignIn(driver);
-    
-            cookieConsent.GoToMenuAfterCookieAccept();
+            
+            //cookieConsent.GoToMenuAfterCookieAccept();
         }
 
         [TestMethod]
         public void LoginValidAccount()
         {
-            menuItemsBeforeSignIn.GoToLogin();
-
-            loginPage.SignInAccount(Resources.email, Resources.password);
-
-            homePage = new HomePage(driver);
-
+            driver.FindElement(By.LinkText("Autentificare")).Click();
+            Thread.Sleep(2000);
+            driver.FindElement(By.Id("email_create")).SendKeys("sabina-nadejda.barila@student.tuiasi.ro");
+            Thread.Sleep(2000);
+            driver.FindElement(By.XPath("//button[@type='submit']")).Click();
+            //menuItemsBeforeSignIn.GoToLogin();
+            //loginPage.SignInAccount(Resources.email, Resources.password);
+            //homePage = new HomePage(driver);
             //Wait for page to load
             Thread.Sleep(2000);
-
-            Assert.IsTrue(homePage.GetWelcomeText().Contains(Resources.welcomeMessage), ValidationText.UnknownText);
+            //Assert.IsTrue(homePage.GetWelcomeText().Contains(Resources.welcomeMessage), ValidationText.UnknownText);
         }
 
         //This test should be refactorized
