@@ -29,15 +29,13 @@ namespace AutomationProject2024
             driver = new ChromeDriver(options);
             driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl("https://www.optimusdigital.ro/ro/");
-            driver.FindElement(By.Id("lgcookieslaw_accept")).Click();
-            Thread.Sleep(2000);
             
-            cookieConsent = new CookieConsent(driver);
 
+            cookieConsent = new CookieConsent(driver);
             loginPage = new LoginPage(driver);
             menuItemsBeforeSignIn = new MenuItemsBeforeSignIn(driver);
             
-            //cookieConsent.GoToMenuAfterCookieAccept();
+            // cookieConsent.GoToMenuAfterCookieAccept();
         }
 
         [TestMethod]
@@ -91,7 +89,7 @@ namespace AutomationProject2024
         [TestMethod]
         public void ShouldGoToProductDetails()
         {
-            menuItemsBeforeSignIn.GoToWatchesPage();
+            menuItemsBeforeSignIn.GoToRoboticsPage();
 
             WatchesPage watchesPage = new WatchesPage(driver);
 
@@ -108,7 +106,7 @@ namespace AutomationProject2024
         [TestMethod]
         public void AddValidProductInCart()
         {
-            menuItemsBeforeSignIn.GoToWatchesPage();
+            menuItemsBeforeSignIn.GoToRoboticsPage();
             WatchesPage watchesPage;
             watchesPage = new WatchesPage(driver);
             ProductDetailsPage watchDetailsPage = new ProductDetailsPage(driver);

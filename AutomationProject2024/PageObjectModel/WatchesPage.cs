@@ -5,11 +5,11 @@ using OpenQA.Selenium;
 
 namespace AutomationProject2024.PageObjectModel
 {
-    public class WatchesPage
+    public class RoboticsPage
     {
         IWebDriver driver;
 
-        public WatchesPage(IWebDriver browser)
+        public RoboticsPage(IWebDriver browser)
         {
             driver = browser;
         }

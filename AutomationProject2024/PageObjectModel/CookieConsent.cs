@@ -16,7 +16,7 @@ namespace AutomationProject2024.PageObjectModel
             driver = browser;
         }
 
-        public IWebElement btnConsent => driver.FindElement(By.XPath("//button[@aria-label='Consent']"));
+        public IWebElement btnConsent => driver.FindElement(By.Id("lgcookieslaw_accept"));
 
         public MenuItemsBeforeSignIn GoToMenuAfterCookieAccept()
         {

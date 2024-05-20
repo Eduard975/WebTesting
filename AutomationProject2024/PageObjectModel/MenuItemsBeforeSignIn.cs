@@ -20,16 +20,17 @@ namespace AutomationProject2024.PageObjectModel
 
         public IWebElement linkSign => driver.FindElement(By.LinkText("Autentificare"));
 
-        public IWebElement gearOption => driver.FindElement(By.XPath("//div[@id='store.menu']//span[text()='Gear']"));
+        public IWebElement productsOption => driver.FindElement(By.XPath("//div[@id='block_top_menu']//a[@title='Produse']"));
 
-        public IWebElement watchesPageOption => driver.FindElement(By.XPath("//ul[@role='menu']//span[text()='Watches']"));
+        //public IWebElement roboticsPageOption => driver.FindElement(By.XPath("//li[@class='']//a[@title='Robotică']"));
      
-        public WatchesPage GoToWatchesPage()
+        public WatchesPage GoToRoboticsPage()
         {
-            Thread.Sleep(2000);
-            new Actions(driver).MoveToElement(gearOption).Perform();
-
-            watchesPageOption.Click();
+            Actions actions = new Actions(driver);
+            
+            actions.MoveToElement(productsOption);
+            Thread.Sleep(1000);
+            //roboticsPageOption.Click();
 
             return new WatchesPage(driver);
         }
