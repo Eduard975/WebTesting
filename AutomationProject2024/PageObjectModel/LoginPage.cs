@@ -18,13 +18,13 @@ namespace AutomationProject2024.PageObjectModel
 
         
         public IWebElement txtEmail => driver.FindElement(By.Id("email"));
-        public IWebElement txtPassword => driver.FindElement(By.Id("pass"));
-        public IWebElement btnSignIn => driver.FindElement(By.Id("send2"));
+        public IWebElement txtPass => driver.FindElement(By.Id("passwd"));
+        public IWebElement btnSignIn => driver.FindElement(By.Id("SubmitLogin"));
 
-        public void SignInAccount(string email, string password)
+        public void SignInAccount(string email, string pass)
         {
             txtEmail.SendKeys(email);
-            txtPassword.SendKeys(password);
+            txtPass.SendKeys(pass);
             btnSignIn.Click();
         }
 

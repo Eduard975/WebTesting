@@ -16,7 +16,7 @@ namespace AutomationProject2024.PageObjectModel
             driver = browser;
         }
 
-        IWebElement welcomeText => driver.FindElement(By.XPath("//li[@class='greet welcome']/span"));
+        IWebElement welcomeText => driver.FindElement(By.XPath("//p[@class='info-account']"));
 
         public string GetWelcomeText()
         {

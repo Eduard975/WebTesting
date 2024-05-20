@@ -31,7 +31,9 @@ namespace AutomationProject2024
             driver.Navigate().GoToUrl("https://www.optimusdigital.ro/ro/");
             driver.FindElement(By.Id("lgcookieslaw_accept")).Click();
             Thread.Sleep(2000);
-            //cookieConsent = new CookieConsent(driver);
+            
+            cookieConsent = new CookieConsent(driver);
+
             loginPage = new LoginPage(driver);
             menuItemsBeforeSignIn = new MenuItemsBeforeSignIn(driver);
             
@@ -41,17 +43,20 @@ namespace AutomationProject2024
         [TestMethod]
         public void LoginValidAccount()
         {
-            driver.FindElement(By.LinkText("Autentificare")).Click();
-            Thread.Sleep(2000);
-            driver.FindElement(By.Id("email_create")).SendKeys("sabina-nadejda.barila@student.tuiasi.ro");
-            Thread.Sleep(2000);
-            driver.FindElement(By.XPath("//button[@type='submit']")).Click();
-            //menuItemsBeforeSignIn.GoToLogin();
-            //loginPage.SignInAccount(Resources.email, Resources.password);
-            //homePage = new HomePage(driver);
+            //driver.FindElement(By.LinkText("Autentificare")).Click();
+            //Thread.Sleep(2000);
+            //driver.FindElement(By.Id("email_create")).SendKeys("sabina-nadejda.barila@student.tuiasi.ro");
+            //Thread.Sleep(2000);
+            //.FindElement(By.XPath("//button[@type='submit']")).Click();
+
+            menuItemsBeforeSignIn.GoToLogin();
+
+            loginPage.SignInAccount(Resources.email, Resources.password);
+            
+            homePage = new HomePage(driver);
             //Wait for page to load
             Thread.Sleep(2000);
-            //Assert.IsTrue(homePage.GetWelcomeText().Contains(Resources.welcomeMessage), ValidationText.UnknownText);
+            Assert.IsTrue(homePage.GetWelcomeText().Contains(Resources.welcomeMessage), ValidationText.UnknownText);
         }
 
         //This test should be refactorized

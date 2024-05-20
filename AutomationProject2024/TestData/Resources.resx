@@ -118,15 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="email" xml:space="preserve">
-    <value>test.user@yahoo.com</value>
+    <value>noulcontadobe@gmail.com</value>
   </data>
   <data name="password" xml:space="preserve">
-    <value>MagentoTests2024!</value>
+    <value>Bobidog1</value>
   </data>
   <data name="watchesPageTitle" xml:space="preserve">
     <value>Watches</value>
   </data>
   <data name="welcomeMessage" xml:space="preserve">
-    <value>Welcome</value>
+    <value>Bine ați venit în cont. Aici puteți administra adresele și comenzile dumneavoastră.</value>
   </data>
 </root>

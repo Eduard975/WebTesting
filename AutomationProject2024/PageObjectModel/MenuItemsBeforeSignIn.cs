@@ -18,7 +18,7 @@ namespace AutomationProject2024.PageObjectModel
             driver = browser;
         }
 
-        public IWebElement linkSign => driver.FindElement(By.LinkText("Sign In"));
+        public IWebElement linkSign => driver.FindElement(By.LinkText("Autentificare"));
 
         public IWebElement gearOption => driver.FindElement(By.XPath("//div[@id='store.menu']//span[text()='Gear']"));
 

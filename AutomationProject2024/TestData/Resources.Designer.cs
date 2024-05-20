@@ -19,7 +19,7 @@ namespace AutomationProject2024.TestData {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -61,7 +61,7 @@ namespace AutomationProject2024.TestData {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to test.user@yahoo.com.
+        ///   Looks up a localized string similar to noulcontadobe@gmail.com.
         /// </summary>
         internal static string email {
             get {
@@ -70,7 +70,7 @@ namespace AutomationProject2024.TestData {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to MagentoTests2024!.
+        ///   Looks up a localized string similar to Bobidog1.
         /// </summary>
         internal static string password {
             get {
@@ -88,7 +88,7 @@ namespace AutomationProject2024.TestData {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Welcome.
+        ///   Looks up a localized string similar to Bine ați venit în cont. Aici puteți administra adresele și comenzile dumneavoastră..
         /// </summary>
         internal static string welcomeMessage {
             get {
