@@ -13,7 +13,7 @@ namespace AutomationProject2024.PageObjectModel
         }
 
         public IWebElement BtnProceedToCheckout => 
-            driver.FindElement(By.XPath("//*[@data-role='proceed-to-checkout']"));
+            driver.FindElement(By.XPath("//a[contains(@class, 'standard-checkout')]"));
 
         public ShippingAddressPage ProceedToCheckoutPage()
         {

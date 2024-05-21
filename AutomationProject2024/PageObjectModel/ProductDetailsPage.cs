@@ -13,14 +13,14 @@ namespace AutomationProject2024.PageObjectModel
             driver = browser;
         }
 
-        IWebElement pageTitle => driver.FindElement(By.XPath("//h1[@class='page-title']/span"));
+        IWebElement pageTitle => driver.FindElement(By.XPath("//h1[@itemprop='name']"));
 
         public string GetPageTitle()
         {
             return pageTitle.Text;
         }
 
-        public IWebElement BtnAddToCart => driver.FindElement(By.Id("product-addtocart-button"));
+        public IWebElement BtnAddToCart => driver.FindElement(By.XPath("//button[@type='submit' and @name='Submit' and contains(@class, 'exclusive')]"));
 
         public ProductDetailsPage AddProductToCart()
         {
@@ -29,10 +29,13 @@ namespace AutomationProject2024.PageObjectModel
             return this;
         }
 
-        public IWebElement ShoppingCartLink => driver.FindElement(By.LinkText("shopping cart"));
+        public IWebElement ShoppingCartLink => driver.FindElement(By.XPath("//a[contains(@title, 'Afișare')]"));
 
         public ShoppingCartPage GoToShoppingCart()
         {
+            //span[@class='continue btn btn-default button exclusive-medium' and @title='Continuaţi cumpărăturile']
+            Thread.Sleep(2000);
+            driver.FindElement(By.XPath("//span[@class='continue btn btn-default button exclusive-medium' and @title='Continuaţi cumpărăturile']\r\n")).Click();
             Thread.Sleep(2000);
             ShoppingCartLink.Click();
 

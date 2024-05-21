@@ -68,7 +68,7 @@
     <Compile Include="PageObjectModel\ProductDetailsPage.cs" />
     <Compile Include="PageObjectModel\ShippingAddressPage.cs" />
     <Compile Include="PageObjectModel\ShoppingCartPage.cs" />
-    <Compile Include="PageObjectModel\WatchesPage.cs" />
+    <Compile Include="PageObjectModel\RoboticsPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestData\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

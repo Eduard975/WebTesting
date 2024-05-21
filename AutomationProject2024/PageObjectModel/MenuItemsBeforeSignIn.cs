@@ -24,7 +24,7 @@ namespace AutomationProject2024.PageObjectModel
 
         //public IWebElement roboticsPageOption => driver.FindElement(By.XPath("//li[@class='']//a[@title='Robotică']"));
      
-        public WatchesPage GoToRoboticsPage()
+        public RoboticsPage GoToRoboticsPage()
         {
             Actions actions = new Actions(driver);
             
@@ -32,7 +32,7 @@ namespace AutomationProject2024.PageObjectModel
             Thread.Sleep(1000);
             //roboticsPageOption.Click();
 
-            return new WatchesPage(driver);
+            return new RoboticsPage(driver);
         }
 
         public LoginPage GoToLogin()

@@ -34,25 +34,19 @@ namespace AutomationProject2024
             cookieConsent = new CookieConsent(driver);
             loginPage = new LoginPage(driver);
             menuItemsBeforeSignIn = new MenuItemsBeforeSignIn(driver);
-            
-            // cookieConsent.GoToMenuAfterCookieAccept();
+            cookieConsent.GoToMenuAfterCookieAccept();
         }
 
         [TestMethod]
         public void LoginValidAccount()
         {
-            //driver.FindElement(By.LinkText("Autentificare")).Click();
-            //Thread.Sleep(2000);
-            //driver.FindElement(By.Id("email_create")).SendKeys("sabina-nadejda.barila@student.tuiasi.ro");
-            //Thread.Sleep(2000);
-            //.FindElement(By.XPath("//button[@type='submit']")).Click();
-
+            
             menuItemsBeforeSignIn.GoToLogin();
 
             loginPage.SignInAccount(Resources.email, Resources.password);
             
             homePage = new HomePage(driver);
-            //Wait for page to load
+            
             Thread.Sleep(2000);
             Assert.IsTrue(homePage.GetWelcomeText().Contains(Resources.welcomeMessage), ValidationText.UnknownText);
         }
@@ -91,7 +85,7 @@ namespace AutomationProject2024
         {
             menuItemsBeforeSignIn.GoToRoboticsPage();
 
-            WatchesPage watchesPage = new WatchesPage(driver);
+            RoboticsPage watchesPage = new RoboticsPage(driver);
 
             Assert.IsTrue(watchesPage.GetPageTitle().Equals(Resources.watchesPageTitle),ValidationText.UnknownText);
            
@@ -107,20 +101,20 @@ namespace AutomationProject2024
         public void AddValidProductInCart()
         {
             menuItemsBeforeSignIn.GoToRoboticsPage();
-            WatchesPage watchesPage;
-            watchesPage = new WatchesPage(driver);
-            ProductDetailsPage watchDetailsPage = new ProductDetailsPage(driver);
+            RoboticsPage robotics;
+            robotics = new RoboticsPage(driver);
+            ProductDetailsPage roboticsDetailsPage = new ProductDetailsPage(driver);
             ShoppingCartPage shoppingCartPage;
             shoppingCartPage = new ShoppingCartPage(driver);
 
-            var productName1 = watchesPage.GetProductName(1);
-            watchesPage.GoToProductDetails(1);
+            var productName1 = robotics.GetProductName(1);
+            robotics.GoToProductDetails(1);
 
-            Assert.IsTrue(watchDetailsPage.GetPageTitle().Equals(productName1), "Is not equal");
+            Assert.IsTrue(roboticsDetailsPage.GetPageTitle().Equals(productName1), "Is not equal");
 
-            watchDetailsPage.AddProductToCart();
+            roboticsDetailsPage.AddProductToCart();
 
-            watchDetailsPage.GoToShoppingCart();
+            roboticsDetailsPage.GoToShoppingCart();
 
             shoppingCartPage.ProceedToCheckoutPage();
         }
