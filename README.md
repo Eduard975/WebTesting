@@ -6,6 +6,6 @@ This is a [Course Overview](/COURSE_OVERVIEW.md) given by the teachers.
 
 ### TO DO:
   - Accept Cookies + Login ${\large{\color{green}✓}}$
-  - Item selection
-  - Add to Cart
-  - Checkout
+  - Item selection         ${\large{\color{green}✓}}$
+  - Add to Cart            ${\large{\color{green}✓}}$
+  - Checkout               ${\large{\color{green}✓}}$
