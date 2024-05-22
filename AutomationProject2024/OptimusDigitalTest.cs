@@ -119,6 +119,33 @@ namespace AutomationProject2024
             shoppingCartPage.ProceedToCheckoutPage();
         }
 
+        [TestMethod]
+        public void RemoveProductFromCart()
+        {
+            menuItemsBeforeSignIn.GoToRoboticsPage();
+            RoboticsPage robotics;
+            robotics = new RoboticsPage(driver);
+            ProductDetailsPage roboticsDetailsPage = new ProductDetailsPage(driver);
+            ShoppingCartPage shoppingCartPage;
+            shoppingCartPage = new ShoppingCartPage(driver);
+
+            var productName1 = robotics.GetProductName(1);
+            robotics.GoToProductDetails(1);
+
+            roboticsDetailsPage.AddProductToCart();
+
+            shoppingCartPage = roboticsDetailsPage.GoToShoppingCart();
+
+            int currentNumberOfItemsInCart = shoppingCartPage.getNumberOfItemsInShoppingCart();
+
+            shoppingCartPage = shoppingCartPage.RemoveItemFromShoppingCart(0);
+
+            int updatedNumberOfItemsInCart = shoppingCartPage.getNumberOfItemsInShoppingCart();
+
+
+            Assert.IsTrue(currentNumberOfItemsInCart == updatedNumberOfItemsInCart + 1, "Is not Equal");
+        }
+
         [TestCleanup]
         public void CloseBrowser()
         {

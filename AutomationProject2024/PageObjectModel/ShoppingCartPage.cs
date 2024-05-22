@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using System.Collections.Generic;
 using System.Threading;
 
 namespace AutomationProject2024.PageObjectModel
@@ -15,6 +16,10 @@ namespace AutomationProject2024.PageObjectModel
         public IWebElement BtnProceedToCheckout => 
             driver.FindElement(By.XPath("//a[contains(@class, 'standard-checkout')]"));
 
+
+        IList<IWebElement> productsList => 
+            driver.FindElements(By.XPath("//tr[contains(@class, 'cart_item')]"));
+
         public ShippingAddressPage ProceedToCheckoutPage()
         {
             // Era o reclama deasupra butonului de checkout
@@ -25,6 +30,24 @@ namespace AutomationProject2024.PageObjectModel
             BtnProceedToCheckout.Click();
 
             return new ShippingAddressPage(driver);
+        }
+
+        public ShoppingCartPage RemoveItemFromShoppingCart(int index)
+        {
+            Thread.Sleep(2000);
+            IWebElement removeButton = productsList[index].FindElement(By.XPath("//a[@class='cart_quantity_delete']"));
+            removeButton.Click();
+
+            Thread.Sleep(2000);
+
+
+
+            return new ShoppingCartPage(driver);
+
+        }
+        public int getNumberOfItemsInShoppingCart()
+        {
+            return productsList.Count;
         }
     }
 }
