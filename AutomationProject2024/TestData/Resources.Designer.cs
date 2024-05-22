@@ -79,11 +79,11 @@ namespace AutomationProject2024.TestData {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Watches.
+        ///   Looks up a localized string similar to ROBOTICĂ.
         /// </summary>
-        internal static string watchesPageTitle {
+        internal static string roboticsPageTitle {
             get {
-                return ResourceManager.GetString("watchesPageTitle", resourceCulture);
+                return ResourceManager.GetString("roboticsPageTitle", resourceCulture);
             }
         }
         
