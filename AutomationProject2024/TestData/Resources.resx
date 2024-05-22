@@ -117,14 +117,35 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="birthdate" xml:space="preserve">
+    <value>10 10 2000</value>
+  </data>
   <data name="email" xml:space="preserve">
     <value>noulcontadobe@gmail.com</value>
+  </data>
+  <data name="emailAlreadyExists" xml:space="preserve">
+    <value>Exista deja un cont cu aceeasi adresa de e-mail. Introdu parola sau cere una noua.</value>
+  </data>
+  <data name="firstname" xml:space="preserve">
+    <value>Bobi</value>
+  </data>
+  <data name="gender" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="lastname" xml:space="preserve">
+    <value>Titan</value>
+  </data>
+  <data name="newEmail" xml:space="preserve">
+    <value>noulcontadobe7@gmail.com</value>
   </data>
   <data name="password" xml:space="preserve">
     <value>Bobidog1</value>
   </data>
   <data name="roboticsPageTitle" xml:space="preserve">
     <value>ROBOTICĂ</value>
+  </data>
+  <data name="SuccAccCreate" xml:space="preserve">
+    <value>Contul dumneavoastră a fost creat.</value>
   </data>
   <data name="welcomeMessage" xml:space="preserve">
     <value>Bine ați venit în cont. Aici puteți administra adresele și comenzile dumneavoastră.</value>

@@ -19,6 +19,8 @@ namespace AutomationProject2024
         private ChromeDriver driver;
         private MenuItemsBeforeSignIn menuItemsBeforeSignIn;
         private LoginPage loginPage;
+        private RegisterPage registerPage;
+
         private HomePage homePage;
         private CookieConsent cookieConsent;
 
@@ -53,38 +55,32 @@ namespace AutomationProject2024
 
         //This test should be refactorized
         [TestMethod]
-        public void Should_RedirectToAnAlreadyCreatedAccountPage_When_TheAccountWasCreatedBefore()
+        public void Should_DisplayAlreadyCreatedAccountPage_When_TheAccountWasCreatedBefore()
         {
+            menuItemsBeforeSignIn.GoToLogin();
             Thread.Sleep(1000);
-            driver.FindElement(By.XPath("//a[@class='login']")).Click();
+
+            loginPage.tryRegisterEmail(Resources.email);
+
+            Thread.Sleep(1000);
+            Assert.IsTrue(loginPage.GetAlertText().Contains(Resources.emailAlreadyExists), ValidationText.UnknownText);
+        }
+
+        [TestMethod]
+        public void RegisterNewAccount()
+        {
+            menuItemsBeforeSignIn.GoToLogin();
             Thread.Sleep(1000);
 
+            loginPage.tryRegisterEmail(Resources.newEmail);
 
-            /*
-            //Locate Create an Account link and click to go to the page 
-            driver.FindElement(By.LinkText("Create an Account")).Click();
+            Thread.Sleep(1000);
 
-            //fill Create an Account form 
-            driver.FindElement(By.Id("firstname")).SendKeys("User");
-            driver.FindElement(By.Id("lastname")).SendKeys("Test");
-            driver.FindElement(By.Id("email_address")).SendKeys(Resources.email);
-            driver.FindElement(By.Id("password")).SendKeys(Resources.password);
-            driver.FindElement(By.Id("password-confirmation")).SendKeys(Resources.password);
+            registerPage = new RegisterPage(driver);
+            registerPage = registerPage.FillInformation(Resources.gender, Resources.firstname, Resources.lastname, Resources.password, Resources.birthdate);
 
-            //click on create account button
-            driver.FindElement(By.XPath("//button[@title='Create an Account']")).Click();
-
-            //identify if title page is the right one
-            var newCustomerpageTitle = driver.FindElement(By.XPath("//span[contains(text(),'Create New Customer Account')]")).Text;
-            //create the assertion to check if page is the correct one
-            Assert.AreEqual("Create New Customer Account", newCustomerpageTitle);
-
-            //locate the validation message for an already created account 
-            var validationMessage = driver.FindElement(By.XPath("//div[@role='alert']/div")).Text;
-            var expectedMessage = "There is already an account with this email address.";
-            //we use this kind of assert when we want to check only some part of the entire text
-            Assert.IsTrue(validationMessage.Contains(expectedMessage));
-            */
+            Thread.Sleep(1000);
+            Assert.IsTrue(registerPage.GetAlertText().Contains(Resources.SuccAccCreate), ValidationText.FailedToCreate);
         }
 
         [TestMethod]

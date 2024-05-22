@@ -19,7 +19,7 @@ namespace AutomationProject2024.TestData {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -61,11 +61,65 @@ namespace AutomationProject2024.TestData {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 10 10 2000.
+        /// </summary>
+        internal static string birthdate {
+            get {
+                return ResourceManager.GetString("birthdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to noulcontadobe@gmail.com.
         /// </summary>
         internal static string email {
             get {
                 return ResourceManager.GetString("email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exista deja un cont cu aceeasi adresa de e-mail. Introdu parola sau cere una noua..
+        /// </summary>
+        internal static string emailAlreadyExists {
+            get {
+                return ResourceManager.GetString("emailAlreadyExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bobi.
+        /// </summary>
+        internal static string firstname {
+            get {
+                return ResourceManager.GetString("firstname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M.
+        /// </summary>
+        internal static string gender {
+            get {
+                return ResourceManager.GetString("gender", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Titan.
+        /// </summary>
+        internal static string lastname {
+            get {
+                return ResourceManager.GetString("lastname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to noulcontadobe7@gmail.com.
+        /// </summary>
+        internal static string newEmail {
+            get {
+                return ResourceManager.GetString("newEmail", resourceCulture);
             }
         }
         
@@ -84,6 +138,15 @@ namespace AutomationProject2024.TestData {
         internal static string roboticsPageTitle {
             get {
                 return ResourceManager.GetString("roboticsPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contul dumneavoastră a fost creat..
+        /// </summary>
+        internal static string SuccAccCreate {
+            get {
+                return ResourceManager.GetString("SuccAccCreate", resourceCulture);
             }
         }
         
