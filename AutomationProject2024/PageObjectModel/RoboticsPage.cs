@@ -17,7 +17,7 @@ namespace AutomationProject2024.PageObjectModel
         }
 
 
-        IWebElement pageTitle => driver.FindElement(By.Id("page-title-heading"));
+        IWebElement pageTitle => driver.FindElement(By.XPath("//div[@id='categories_block_left']//h2[@class='title_block']"));
 
         IList<IWebElement> productsList => driver.FindElements(By.XPath("//li[contains(@class, 'ajax_block_product')]"));
 

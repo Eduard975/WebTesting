@@ -83,16 +83,15 @@ namespace AutomationProject2024
         [TestMethod]
         public void ShouldGoToProductDetails()
         {
-            menuItemsBeforeSignIn.GoToRoboticsPage();
+            RoboticsPage roboticsPage = menuItemsBeforeSignIn.GoToRoboticsPage();
 
-            RoboticsPage watchesPage = new RoboticsPage(driver);
+            Thread.Sleep(1000);
 
-            Assert.IsTrue(watchesPage.GetPageTitle().Equals(Resources.watchesPageTitle),ValidationText.UnknownText);
+            Assert.IsTrue(roboticsPage.GetPageTitle().Equals(Resources.roboticsPageTitle), ValidationText.UnknownText);
            
-            var detailsPageTitle = watchesPage.GetProductName(0);
-            watchesPage.GoToProductDetails(0);
+            var detailsPageTitle = roboticsPage.GetProductName(0);
+            roboticsPage.GoToProductDetails(0);
             ProductDetailsPage productDetails = new ProductDetailsPage(driver);
-
             Assert.IsTrue(productDetails.GetPageTitle().Equals(detailsPageTitle), ValidationText.UnknownText);
         }
 
@@ -122,7 +121,6 @@ namespace AutomationProject2024
         [TestCleanup]
         public void CloseBrowser()
         {
-            //Thread.Sleep(60000);
             driver.Quit();
         }
     }

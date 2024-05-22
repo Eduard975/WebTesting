@@ -123,8 +123,8 @@
   <data name="password" xml:space="preserve">
     <value>Bobidog1</value>
   </data>
-  <data name="watchesPageTitle" xml:space="preserve">
-    <value>Watches</value>
+  <data name="roboticsPageTitle" xml:space="preserve">
+    <value>ROBOTICĂ</value>
   </data>
   <data name="welcomeMessage" xml:space="preserve">
     <value>Bine ați venit în cont. Aici puteți administra adresele și comenzile dumneavoastră.</value>
