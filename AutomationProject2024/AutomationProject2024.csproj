@@ -66,6 +66,7 @@
     <Compile Include="PageObjectModel\MenuItems.cs" />
     <Compile Include="PageObjectModel\MenuItemsBeforeSignIn.cs" />
     <Compile Include="PageObjectModel\ProductDetailsPage.cs" />
+    <Compile Include="PageObjectModel\RegisterPage.cs" />
     <Compile Include="PageObjectModel\ShippingAddressPage.cs" />
     <Compile Include="PageObjectModel\ShoppingCartPage.cs" />
     <Compile Include="PageObjectModel\RoboticsPage.cs" />
